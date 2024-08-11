@@ -105,3 +105,19 @@ input {
 .failure {
   background-color: rgb(255, 71, 111) !important;
 }
+
+#abcContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5vh;
+}
+#abcContainer div {
+  background-color: transparent;
+  border: 0.03em solid black;
+  width: 2vw;
+  height: 2vw;
+  font-size: 2vw;
+  text-align: center;
+  margin: 0.1em;
+}

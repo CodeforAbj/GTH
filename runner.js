@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         e.target.value = ""; // Clear invalid input
       }
     });
-    box.addEventListener("keypress", (e) => {
+    box.addEventListener("keydown", (e) => {
       e.target.classList.remove("success", "halfWay", "failure");
       e.target.value = "";
     });
@@ -43,13 +43,21 @@ submitButton.addEventListener("click", () => {
   const keyArray = Array.from(key.toUpperCase());
   for (let i = 0; i < key.length; i++) {
     inputContainer.children[i].className = "";
+    let hinter = document.getElementById(enteredText[i]);
     if (keyArray[i] == enteredText[i]) {
       inputContainer.children[i].classList.add("success");
+      hinter.classList.add("success");
     } else if (keyArray.includes(enteredText[i])) {
       inputContainer.children[i].classList.add("halfWay");
+      hinter.classList.add("halfWay");
     } else {
       inputContainer.children[i].classList.add("failure");
+      hinter.classList.add("failure");
     }
   }
   inputContainer.children[0].focus();
+});
+
+document.getElementById("newName").addEventListener("click", function () {
+  location.reload(); // Reloads the current page
 });
